@@ -24,13 +24,7 @@ Nghiên cứu này nhằm giải quyết các vấn đề trên bằng cách:
 - **BPA Động**: Sử dụng Adaboost để xác định BPA, không phụ thuộc vào giả định phân phối dữ liệu, giúp giải quyết vấn đề dữ liệu phân tán và thiếu mẫu huấn luyện.
 - **Cơ Chế Xử Lý Xung Đột Mới**: Phương pháp phủ định BPA kết hợp với entropy niềm tin (Deng entropy) để giảm thiểu xung đột khi hợp nhất các BPA.
 
-## 📚 Kết Cấu Báo Cáo
 
-1. **Giới Thiệu**: Bối cảnh nghiên cứu, vấn đề và mục tiêu.
-2. **Lý Thuyết Nền Tảng**: Chi tiết về lý thuyết Dempster-Shafer, Adaboost và entropy niềm tin.
-3. **Triển Khai Phương Pháp**: Quá trình xây dựng mô hình và tích hợp Adaboost với DSET.
-4. **Thí Nghiệm và Đánh Giá**: Đánh giá hiệu quả của phương pháp qua các thí nghiệm thực tế.
-5. **Thảo Luận và Kết Luận**: Tổng kết và đề xuất hướng phát triển trong tương lai.
 
 ---
 
