@@ -1,49 +1,37 @@
-# 🧠🔬 Nghiên cứu: Xử lý Dữ liệu Không Chắc Chắn bằng Lý thuyết Dempster-Shafer
+# Mô hình xây dưng cơ sở tri thức
 
-## 📚 Giới thiệu
+## 🚀 Giới Thiệu
 
-Trong bối cảnh cuộc cách mạng công nghệ đang diễn ra mạnh mẽ, các ứng dụng của **trí tuệ nhân tạo** và **học máy** đã trở thành xương sống cho nhiều hệ thống thông minh. Khả năng **phân loại dữ liệu chính xác** là yếu tố then chốt quyết định sự thành công của các ứng dụng, đặc biệt trong những lĩnh vực đòi hỏi độ tin cậy cao như:
+Trong bối cảnh cuộc cách mạng công nghệ đang diễn ra mạnh mẽ, trí tuệ nhân tạo (AI) và học máy (machine learning) ngày càng trở thành xương sống của các hệ thống thông minh. Đặc biệt trong những lĩnh vực yêu cầu độ chính xác cao như y tế, tài chính, an ninh và xe tự hành, khả năng phân loại dữ liệu chính xác đóng vai trò quan trọng trong sự thành công của các ứng dụng này.
 
-- 🏥 Y tế
-- 💰 Tài chính
-- 🛡️ An ninh
-- 🚗 Xe tự hành
+Tuy nhiên, dữ liệu hiện nay thường đến từ nhiều nguồn khác nhau và có thể chứa thông tin không đầy đủ, mâu thuẫn hoặc nhiễu loạn. Chẳng hạn, trong hệ thống chẩn đoán bệnh, các kết quả xét nghiệm có thể mâu thuẫn với hình ảnh X-quang, gây khó khăn trong việc đưa ra kết luận chính xác và kịp thời.
 
-Tuy nhiên, thách thức lớn hiện nay đến từ việc dữ liệu thường được thu thập từ nhiều nguồn khác nhau, dẫn đến tình trạng:
+Để giải quyết vấn đề này, lý thuyết Dempster-Shafer (DSET) đã được sử dụng như một công cụ mạnh mẽ giúp xử lý thông tin không chắc chắn. Tuy nhiên, việc áp dụng DSET vẫn gặp phải một số thách thức lớn, đặc biệt là xác định giá trị tin cậy (BPA) chính xác và giải quyết xung đột khi kết hợp các BPA từ các nguồn dữ liệu khác nhau.
 
-- ❓ Thiếu hụt thông tin
-- ⚡ Mâu thuẫn giữa các nguồn
-- 🌀 Xuất hiện nhiễu loạn trong dữ liệu
+## 🔍 Vấn Đề Nghiên Cứu
 
-Ví dụ, trong hệ thống hỗ trợ chẩn đoán y khoa, các kết quả từ xét nghiệm máu và hình ảnh X-quang có thể mâu thuẫn, gây khó khăn trong việc đưa ra quyết định chính xác và kịp thời.
+- **Xác định BPA chính xác**: Các phương pháp truyền thống như phân phối Gaussian không hoạt động tốt khi dữ liệu phân tán hoặc có số lượng mẫu huấn luyện ít.
+- **Xung Đột Khi Hợp Nhất BPA**: Quy tắc hợp nhất của Dempster có thể dẫn đến kết quả phản trực giác khi các nguồn thông tin có sự mâu thuẫn lớn.
 
-## 🧐 Vấn đề nghiên cứu
+## 💡 Mục Tiêu Nghiên Cứu
 
-Trước thực trạng dữ liệu không chắc chắn và mâu thuẫn, việc phát triển các phương pháp xử lý hiệu quả là một yêu cầu cấp thiết.  
-Trong nghiên cứu này, chúng tôi tập trung vào việc ứng dụng **lý thuyết Dempster-Shafer (DSET)** để:
+Nghiên cứu này nhằm giải quyết các vấn đề trên bằng cách:
+1. **Áp dụng Adaboost** để xác định BPA động.
+2. **Phát triển cơ chế xử lý xung đột** mới giúp giảm thiểu mâu thuẫn khi kết hợp BPA từ nhiều nguồn.
 
-- 🧩 Gán giá trị tin cậy (**BPA - Basic Probability Assignment**) cho các tập hợp giả thuyết.
-- 🔗 Kết hợp thông tin từ nhiều nguồn một cách linh hoạt.
-- 📊 Đánh giá độ tin cậy của các giả thuyết được hình thành.
+## 🔧 Đóng Góp Chính
 
-Mặc dù DSET là một công cụ mạnh mẽ, trong quá trình ứng dụng thực tiễn vẫn tồn tại hai thách thức lớn:
+- **BPA Động**: Sử dụng Adaboost để xác định BPA, không phụ thuộc vào giả định phân phối dữ liệu, giúp giải quyết vấn đề dữ liệu phân tán và thiếu mẫu huấn luyện.
+- **Cơ Chế Xử Lý Xung Đột Mới**: Phương pháp phủ định BPA kết hợp với entropy niềm tin (Deng entropy) để giảm thiểu xung đột khi hợp nhất các BPA.
 
-### 🚩 1. Xác định BPA chính xác
+## 📚 Kết Cấu Báo Cáo
 
-Trong nhiều trường hợp, dữ liệu huấn luyện bị hạn chế về số lượng hoặc có phân phối phức tạp, khiến cho các phương pháp truyền thống dựa trên giả định phân phối Gaussian hay các hàm thành viên mờ trở nên kém hiệu quả và thiếu tin cậy.
-
-### 🚩 2. Giải quyết xung đột khi hợp nhất BPA
-
-Khi kết hợp các BPA từ nhiều nguồn, sự mâu thuẫn giữa các nguồn có thể dẫn tới việc quy tắc hợp nhất của Dempster cho ra các kết quả phản trực giác, ảnh hưởng đến tính ổn định và độ chính xác của hệ thống.
-
-## 🎯 Mục tiêu nghiên cứu
-
-Nghiên cứu này nhằm:
-
-- 🔍 Phân tích sâu các vấn đề trong việc áp dụng lý thuyết Dempster-Shafer cho dữ liệu không chắc chắn.
-- 🛠️ Đề xuất các hướng tiếp cận nhằm cải thiện độ chính xác trong việc xác định BPA.
-- 🧪 Khảo sát và đánh giá các chiến lược giải quyết xung đột trong quá trình hợp nhất thông tin.
+1. **Giới Thiệu**: Bối cảnh nghiên cứu, vấn đề và mục tiêu.
+2. **Lý Thuyết Nền Tảng**: Chi tiết về lý thuyết Dempster-Shafer, Adaboost và entropy niềm tin.
+3. **Triển Khai Phương Pháp**: Quá trình xây dựng mô hình và tích hợp Adaboost với DSET.
+4. **Thí Nghiệm và Đánh Giá**: Đánh giá hiệu quả của phương pháp qua các thí nghiệm thực tế.
+5. **Thảo Luận và Kết Luận**: Tổng kết và đề xuất hướng phát triển trong tương lai.
 
 ---
 
-*🌟 Đây là bước mở đầu cho một chuỗi các nghiên cứu sâu hơn về xử lý dữ liệu không chắc chắn, hướng tới việc xây dựng các hệ thống phân loại dữ liệu thông minh, ổn định và đáng tin cậy hơn.*
+## 🌟 Cảm ơn bạn đã tham gia cùng chúng tôi trong hành trình nghiên cứu này! Để biết thêm chi tiết về phương pháp hoặc tham gia vào dự án, hãy ghé thăm [Trang GitHub của Dự Án](#).
